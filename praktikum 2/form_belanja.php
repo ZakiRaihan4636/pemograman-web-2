@@ -1,15 +1,20 @@
 <?php
 
-$nama = $_POST['customer'];
-$produk = $_POST['produk'];
-$jumlah = $_POST['jumlah'];
 
-if ($produk == "TV") {
-	$harga = 4200000 * $jumlah;
-} elseif ($produk == "Kulkas") {
-	$harga = 3100000 * $jumlah;
-} elseif ($produk == "Mesin Cuci") {
-	$harga = 3800000 * $jumlah;
+
+
+if (isset($_POST['proses'])) {
+	$nama = $_POST['customer'];
+	$produk = $_POST['produk'];
+	$jumlah = $_POST['jumlah'];
+
+	if ($produk == "TV") {
+		$harga = 4200000 * $jumlah;
+	} elseif ($produk == "Kulkas") {
+		$harga = 3100000 * $jumlah;
+	} elseif ($produk == "Mesin Cuci") {
+		$harga = 3800000 * $jumlah;
+	}
 }
 
 
@@ -35,14 +40,14 @@ if ($produk == "TV") {
 					<div class="Form mt-4 mx-5">
 						<form action="form_belanja.php" method="post">
 							<div class="form-group row">
-								<label for="customer" class="col-2-lg col-form-label">Customer</label>
+								<label for="customer" class="col-2 col-form-label">Customer</label>
 								<div class="col-4">
 									<input id="customer" required name="customer" placeholder="Nama Customer" type="text" class="form-control">
 								</div>
 							</div>
 
 							<div class="form-group row">
-								<label class="col-2-lg-sm">Pilih Produk</label>
+								<label class="col-2">Pilih Produk</label>
 								<div class="col-8">
 									<div class="custom-control custom-radio custom-control-inline">
 										<input name="produk" id="produk_0" type="radio" class="custom-control-input" value="TV">
@@ -59,7 +64,7 @@ if ($produk == "TV") {
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="text" class="col-2-lg col-form-label">Jumlah</label>
+								<label for="text" class="col-2 col-form-label">Jumlah</label>
 								<div class="col-2">
 									<input id="text" value="0" required name="jumlah" placeholder="Jumlah" type="number" class="form-control">
 								</div>
@@ -73,7 +78,7 @@ if ($produk == "TV") {
 					</div>
 				</div>
 				<div class="col-4">
-					<div class="list-group">
+					<div class="list-group position-relative">
 						<button type="button" class="list-group-item list-group-item-action active" aria-current="true">
 							Daftar Harga
 						</button>
@@ -95,7 +100,7 @@ if ($produk == "TV") {
 					<span>Nama Customer : <?= $nama; ?> </span>
 					<span>Produk Pilihan : <?= $produk; ?> </span>
 					<span>Jumlah : <?= $jumlah; ?></span>
-					<span>Total Belanja : <?= "Rp." . $harga; ?></span>
+					<span>Total Belanja : <?= "Rp " . $harga; ?></span>
 				</div>
 			</div>
 		</div>

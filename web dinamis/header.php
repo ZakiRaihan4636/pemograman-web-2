@@ -10,6 +10,7 @@
 
 <body>
   <header role="banner">
-    <h2>Student Sore - STTNF</h2>
+    <h2>Student Activity Score - STTNF</h2>
     <a href="#">Home</a> | <a href="#">Activity</a> | <a href="#">My score</a> | <a href="#">Login</a>
+    <hr>
   </header>
